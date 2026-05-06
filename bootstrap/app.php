@@ -25,7 +25,6 @@ return Application::configure(basePath: dirname(__DIR__))
         apiPrefix: 'api/v1',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->statefulApi();
         $middleware->validateCsrfTokens(except: [
             'api/v1/auth/login',
             'api/v1/auth/logout',
